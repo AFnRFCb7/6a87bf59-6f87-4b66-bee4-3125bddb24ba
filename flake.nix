@@ -1,3 +1,4 @@
+# 2415225178811784
 {
     inputs = { } ;
     outputs =
@@ -7,7 +8,7 @@
                     { input ? x : x , output ? x : x } :
                         let
                             implementation =
-                                { lib , pkgs , ... } :
+                                { lib , pkgs , ... } @module :
                                     let
                                         input = ./node-modules/exploded ;
                                         identified =
