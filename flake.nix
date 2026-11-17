@@ -5,7 +5,7 @@
         { self } :
             {
                 lib =
-                    { input ? x : x , output ? x : x } :
+                    { input ? x : x , output ? x : x } @module :
                         let
                             implementation =
                                 { lib , pkgs , ... } @module :
