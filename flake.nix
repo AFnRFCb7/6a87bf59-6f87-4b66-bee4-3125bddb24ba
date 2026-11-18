@@ -37,7 +37,7 @@
                                                                                                         name = "command" ;
                                                                                                         post = [ ] ;
                                                                                                         runtime-inputs =
-                                                                                                            { } :
+                                                                                                            { config , ... } :
                                                                                                                 [
                                                                                                                     (
                                                                                                                         config.tree-serialization.implode
