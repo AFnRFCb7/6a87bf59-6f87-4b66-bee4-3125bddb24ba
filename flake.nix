@@ -24,7 +24,7 @@
                                                                 lib.mkOption
                                                                     {
                                                                         default =
-                                                                            pkgs.runtimeCommand
+                                                                            pkgs.runCommand
                                                                                 "express"
                                                                                 {
                                                                                     nativeBuildInputs =
