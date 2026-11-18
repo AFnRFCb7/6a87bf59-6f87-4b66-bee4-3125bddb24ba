@@ -10,11 +10,8 @@
                             implementation =
                                 { lib , pkgs , ... } @module :
                                     let
-                                        input = ./node-modules/exploded ;
-                                        identified =
-                                            if builtins.typeOf input == "lambda" then input module
-                                            else if builtins.typeOf input == "null" then module
-                                            else builtins.throw "7374441004112524" ;
+                                        exploded = ./node-modules.exploded ;
+                                        identified = input module ;
                                         in
                                             with identified ;
                                                 {
@@ -34,7 +31,7 @@
                                                                                                     {
                                                                                                         mounts =
                                                                                                             {
-                                                                                                                input = { read-only = true ; source = input ; type = "bind" ; } ;
+                                                                                                                input = { read-only = true ; source = exploded ; type = "bind" ; } ;
                                                                                                                 output = { source = "$out" ; type = "bind" ; } ;
                                                                                                             } ;
                                                                                                         name = "command" ;
