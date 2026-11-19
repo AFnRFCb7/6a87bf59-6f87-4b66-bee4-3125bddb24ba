@@ -50,6 +50,7 @@
                                                                                                                 ] ;
                                                                                                         text =
                                                                                                             ''											
+                                                                                                                # shellcheck disable=SC2154
                                                                                                                 export OUT="$out"
                                                                                                                 implode
                                                                                                             '' ;
