@@ -52,7 +52,7 @@
                                                                                                         text =
                                                                                                             ''											
                                                                                                                 export OUT="$1"
-                                                                                                                implode
+                                                                                                                ln --symbolic ${ exploded } "$OUT" # implode
                                                                                                             '' ;
                                                                                                         variables = { } ;
                                                                                                     }
