@@ -15,6 +15,7 @@
                                         in
                                             with identified ;
                                                 {
+                                                    config.environment.sessionVariables.FETCH_EXPRESS = "express 5.1.0" ;
                                                     options =
                                                         {
                                                             express-package =
