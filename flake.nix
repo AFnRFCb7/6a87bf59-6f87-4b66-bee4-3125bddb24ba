@@ -10,7 +10,7 @@
                             implementation =
                                 { lib , pkgs , ... } @module :
                                     let
-                                        exploded = ./node-modules.exploded ;
+                                        exploded = ./node_modules.exploded ;
                                         identified = input module ;
                                         in
                                             with identified ;
