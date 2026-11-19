@@ -59,8 +59,8 @@
                                                                                             )
                                                                                         ] ;
                                                                                 }
-                                                                                '' ;
-                                                                                command "$out"'' ;
+                                                                                ''
+                                                                                command "$out"
                                                                                 '' ;
                                                                         type = lib.types.package ;
                                                                     } ;
