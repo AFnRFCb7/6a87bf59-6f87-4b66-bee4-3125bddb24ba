@@ -32,7 +32,7 @@
                                                                                                         mounts =
                                                                                                             {
                                                                                                                 input = { read-only = true ; source = exploded ; type = "bind" ; } ;
-                                                                                                                output = { source = "$out" ; type = "bind" ; } ;
+                                                                                                                output = { source = "$OUT" ; type = "bind" ; } ;
                                                                                                             } ;
                                                                                                         name = "command" ;
                                                                                                         post = [ ] ;
@@ -49,9 +49,9 @@
                                                                                                                     )
                                                                                                                 ] ;
                                                                                                         text =
-                                                                                                            ''
+                                                                                                            ''											
+                                                                                                                export OUT="$out"
                                                                                                                 implode
-                                                                                                                rm --recursive --force /mounts/out/node_modules.exploded
                                                                                                             '' ;
                                                                                                         variables = { } ;
                                                                                                     }
