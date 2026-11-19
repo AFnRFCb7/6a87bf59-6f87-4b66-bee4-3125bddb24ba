@@ -60,7 +60,7 @@
                                                                                         ] ;
                                                                                 }
                                                                                 ''
-                                                                                command "$out"
+                                                                                touch "$out"
                                                                                 '' ;
                                                                         type = lib.types.package ;
                                                                     } ;
