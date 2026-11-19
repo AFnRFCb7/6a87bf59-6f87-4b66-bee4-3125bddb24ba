@@ -22,7 +22,7 @@
                                                                     {
                                                                         default =
                                                                             pkgs.runCommand
-                                                                                "express"
+                                                                                "express-package"
                                                                                 {
                                                                                     nativeBuildInputs =
                                                                                         [
@@ -59,7 +59,9 @@
                                                                                             )
                                                                                         ] ;
                                                                                 }
-                                                                                ''command "$out"'' ;
+                                                                                '' ;
+                                                                                command "$out"'' ;
+                                                                                '' ;
                                                                         type = lib.types.package ;
                                                                     } ;
                                                         } ;
