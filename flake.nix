@@ -54,6 +54,7 @@
                                                                                                                 implode
                                                                                                                 cp --recursive /mounts/output "$out"
                                                                                                             '' ;
+                                                                                                        variables = { } ;
                                                                                                     }
                                                                                             )
                                                                                         ] ;
