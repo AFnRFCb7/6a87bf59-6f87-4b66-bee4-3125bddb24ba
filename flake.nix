@@ -32,7 +32,7 @@
                                                                                                         mounts =
                                                                                                             {
                                                                                                                 input = { read-only = true ; source = exploded ; type = "bind" ; } ;
-                                                                                                                output = { type = "temporary" ; } ;
+                                                                                                                output = { source = "$OUT" ; type = "bind" ; } ;
                                                                                                             } ;
                                                                                                         name = "command" ;
                                                                                                         post = [ ] ;
@@ -51,15 +51,15 @@
                                                                                                                 ] ;
                                                                                                         text =
                                                                                                             ''											
+                                                                                                                export OUT="$1"
                                                                                                                 implode
-                                                                                                                cp --recursive /mounts/output "$out"
                                                                                                             '' ;
                                                                                                         variables = { } ;
                                                                                                     }
                                                                                             )
                                                                                         ] ;
                                                                                 }
-                                                                                "command" ;
+                                                                                ''command "$out"'' ;
                                                                         type = lib.types.package ;
                                                                     } ;
                                                         } ;
