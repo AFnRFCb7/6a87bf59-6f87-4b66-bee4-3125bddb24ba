@@ -50,6 +50,7 @@
                                                                                                                 ] ;
                                                                                                         text =
                                                                                                             ''											
+                                                                                                                export OUT="$out"
                                                                                                                 implode
                                                                                                             '' ;
                                                                                                         variables = { OUT = "$out" ; } ;
