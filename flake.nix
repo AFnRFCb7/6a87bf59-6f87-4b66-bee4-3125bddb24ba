@@ -32,13 +32,14 @@
                                                                                                         mounts =
                                                                                                             {
                                                                                                                 input = { read-only = true ; source = exploded ; type = "bind" ; } ;
-                                                                                                                output = { source = "$OUT" ; type = "bind" ; } ;
+                                                                                                                output = { type = "temporary" ; } ;
                                                                                                             } ;
                                                                                                         name = "command" ;
                                                                                                         post = [ ] ;
                                                                                                         runtime-inputs =
                                                                                                             { config , ... } :
                                                                                                                 [
+                                                                                                                    pkgs.coreutils
                                                                                                                     (
                                                                                                                         config.tree-serialization.implode
                                                                                                                             {
@@ -50,9 +51,8 @@
                                                                                                                 ] ;
                                                                                                         text =
                                                                                                             ''											
-                                                                                                                # shellcheck disable=SC2154
-                                                                                                                export OUT="$out"
                                                                                                                 implode
+                                                                                                                cp --recursive /mounts/output "$out"
                                                                                                             '' ;
                                                                                                         variables = { OUT = "$out" ; } ;
                                                                                                     }
