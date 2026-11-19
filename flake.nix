@@ -27,40 +27,18 @@
                                                                                     nativeBuildInputs =
                                                                                         [
                                                                                             (
-                                                                                                config.lazy-shell-application
+                                                                                                config.tree-serialization.implode
                                                                                                     {
-                                                                                                        mounts =
-                                                                                                            {
-                                                                                                                input = { read-only = true ; source = exploded ; type = "bind" ; } ;
-                                                                                                                output = { source = "$OUT" ; type = "bind" ; } ;
-                                                                                                            } ;
-                                                                                                        name = "command" ;
-                                                                                                        post = [ ] ;
-                                                                                                        runtime-inputs =
-                                                                                                            { config , ... } :
-                                                                                                                [
-                                                                                                                    pkgs.coreutils
-                                                                                                                    (
-                                                                                                                        config.tree-serialization.implode
-                                                                                                                            {
-                                                                                                                                input = "/mounts/input" ;
-                                                                                                                                name = "implode" ;
-                                                                                                                                output = "/mounts/output" ;
-                                                                                                                            }
-                                                                                                                    )
-                                                                                                                ] ;
-                                                                                                        text =
-                                                                                                            ''											
-                                                                                                                export OUT="$1"
-                                                                                                                ln --symbolic ${ exploded } "$OUT" # implode
-                                                                                                            '' ;
-                                                                                                        variables = { } ;
+                                                                                                        input = exploded ;
+                                                                                                        name = "implode" ;
+                                                                                                        output = "$OUT" ;
                                                                                                     }
                                                                                             )
                                                                                         ] ;
                                                                                 }
                                                                                 ''
-                                                                                touch "$out"
+                                                                                    export OUT="$out"
+                                                                                    implode
                                                                                 '' ;
                                                                         type = lib.types.package ;
                                                                     } ;
